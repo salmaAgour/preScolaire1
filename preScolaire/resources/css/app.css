@@ -1,0 +1,23 @@
+select {
+    margin-left: 5px;
+}
+
+p,
+h2 {
+    display: flex;
+    justify-content: flex-start
+}
+
+.selects {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 100px;
+}
+
+body {
+    display: flex;
+}
+.content{
+    margin-right: 50px;
+}
+
