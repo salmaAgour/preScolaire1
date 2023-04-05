@@ -16,7 +16,7 @@
             <svg class="bi me-2" width="30" height="24">
                 <use xlink:href="C:\Users\Salma\Downloads\image"></use>
             </svg>
-            <span class="fs-5 fw-semibold text-white">projectName</span>
+            <span class="fs-5 fw-semibold text-white">project</span>
         </a>
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
