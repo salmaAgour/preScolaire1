@@ -21,3 +21,16 @@ body {
     margin-right: 50px;
 }
 
+#contact{
+    position: absolute;
+    left: 0;
+    padding: 20px 20px 30px 20px;
+    background-color: orange;
+    border: none;
+    border-bottom-right-radius:55%;
+    box-shadow: -5px -1px 20px black;
+}
+#contact a{
+    text-decoration: none;
+    color: white;
+}

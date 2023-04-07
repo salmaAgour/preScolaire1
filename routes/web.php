@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\filterController;
+use App\Http\Controllers\cont;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::resource('/', cont::class);
+
+Route::view('/contact','contact')->name('contact');
+
+Route::view('/search', 'search')->name('search');
+
+Route::POST('/',[cont::class,'search'])->name('res');
+
+Route::fallback(function () {
+    return "<h1>this route doesn't exist</h1>";
 });
