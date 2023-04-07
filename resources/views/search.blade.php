@@ -15,3 +15,4 @@
             </div>
         </form>
     @endsection
+@section('title','البحث عن وحدة')

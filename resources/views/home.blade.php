@@ -24,11 +24,13 @@
             <option value="الموسم الدراسي">الموسم الدراسي</option>
         </select>
         <button class="btn btn-primary" id="filter"> بحث </button> --}}
-        <a href="{{url('/search')}}" class="btn btn-primary"> البحث عن وحدة </a>
 
     </div>
     <hr />
     <h2> لائحة الوحدات برسم الموسم 2022/2023 </h2>
+    <br />
+    <a href="{{url('/search')}}" class="btn btn-primary"> البحث عن وحدة </a>
+    <br />
     <br />
     <table class="table text-center table-hover">
         <thead class=" table-secondary">

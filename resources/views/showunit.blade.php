@@ -37,3 +37,5 @@
     </table>
     <a class="btn btn-danger" href="{{ route('index') }}">Retour à La Liste des unites</a>
 @endsection
+
+{{-- @section('title',{{ $u->nom }}.' نتائج البحث عن  ') --}}

@@ -7,6 +7,7 @@
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>@yield('title')</title>
 
     @vite('resources/js/app.js')
 
@@ -14,31 +15,31 @@
 
 <body dir="rtl">
     <div class="flex-shrink-0 p-3 text-white bg-primary " style="width: 280px;height:100%">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <a href="{{ route('index') }}" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
             <svg class="bi me-2" width="30" height="24">
                 <use xlink:href="C:\Users\Salma\Downloads\image"></use>
             </svg>
-            <span class="fs-5 fw-semibold text-white">project</span>
+            <span class="fs-5 fw-semibold text-white"> الرئيسية </span>
         </a>
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded collapsed text-white" data-bs-toggle="collapse"
                     data-bs-target="#home-collapse" aria-expanded="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                         class="bi bi-building" viewBox="0 0 16 16">
                         <path
                             d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" />
                         <path
                             d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z" />
-                    </svg>
+                    </svg> --}}
 
                     وحدات التعليم الاولي
                 </button>
                 <div class="collapse" id="home-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    <ul class="btn-toggle-nav list-unstyled fw-bold pb-1 small">
+                        <li><a href="#" class="link-info rounded text-decoration-none">Overview</a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none">Updates</a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none">Reports</a></li>
                     </ul>
                 </div>
             </li>
@@ -48,11 +49,11 @@
                     الجمعيات /الشراكة
                 </button>
                 <div class="collapse" id="dashboard-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                        <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                        <li><a href="#" class="link-dark rounded">Annually</a></li>
+                    <ul class="btn-toggle-nav list-unstyled fw-bold pb-1 small">
+                        <li><a href="#" class="link-info rounded text-decoration-none">Overview</a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none">Weekly</a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none">Monthly</a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none">Annually</a></li>
                     </ul>
                 </div>
             </li>
@@ -77,11 +78,10 @@
                     الحساب
                 </button>
                 <div class="collapse" id="account-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">New...</a></li>
-                        <li><a href="#" class="link-dark rounded">Profile</a></li>
-                        <li><a href="#" class="link-dark rounded">Settings</a></li>
-                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                    <ul class="btn-toggle-nav list-unstyled fw-bold pb-1 small">
+                        <li><a href="#" class="link-info rounded text-decoration-none"> حسابي </a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none"> اعدادات </a></li>
+                        <li><a href="#" class="link-info rounded text-decoration-none"> خروج </a></li>
                     </ul>
                 </div>
             </li>
