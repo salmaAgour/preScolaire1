@@ -1,30 +1,6 @@
 @extends('layout')
 @section('content')
     <br />
-    <div class="selects">
-        {{-- <select name="commune" id="commune">
-            <option value="جماعة">جماعة</option>
-            <option value="جماعة">جماعة</option>
-            <option value="جماعة">جماعة</option>
-        </select>
-        <select name="etablissement" id="etablissement">
-            <option value="مؤسسة">مؤسسة</option>
-            <option value="مؤسسة">مؤسسة</option>
-            <option value="مؤسسة">مؤسسة</option>
-        </select>
-        <select name="unite" id="unite">
-            <option value="وحدة">وحدة</option>
-            <option value="وحدة">وحدة</option>
-            <option value="وحدة">وحدة</option>
-        </select>
-        <select name="anneeScolaire" id="anneeScolaire">
-            <option value="الموسم الدراسي">الموسم الدراسي</option>
-            <option value="الموسم الدراسي">الموسم الدراسي</option>
-            <option value="الموسم الدراسي">الموسم الدراسي</option>
-        </select>
-        <button class="btn btn-primary" id="filter"> بحث </button> --}}
-
-    </div>
     
     <h2> لائحة الوحدات برسم الموسم 2022/2023 </h2>
     <br />

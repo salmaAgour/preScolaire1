@@ -3,15 +3,15 @@
 @section('content')
     <br />
     <h1>{{ ' وحدة ' . $unit->nom }}</h1>
-
-    <table class="table text-center table-hover border m-5">
-        <tbody>
-            <tr>
-                <th class="text-primary"> رقم الوحدة </th>
-                <td class="border">{{ $unit->id }}</td>
-            </tr>
-            <tr>
-                <th class="text-primary"> الجماعة </th>
+    <br>
+        <table class="table text-center table-hover border w-50 ">
+            <tbody>
+                <tr>
+                    <th class="text-primary"> رقم الوحدة </th>
+                    <td class="border">{{ $unit->id }}</td>
+                </tr>
+                <tr>
+                    <th class="text-primary"> الجماعة </th>
                 <td class="border">{{ $unit->commune }}</td>
             </tr>
             <tr>
@@ -46,10 +46,12 @@
             <tr>
                 <th class="text-primary" > الموسم الدراسي </th>
                 <td class="border">{{ $unit->anneeSco }}</td>
-            </tr>
-        </tbody>
-    </table>
-    <a class="btn" style="background-color: orange;color:white" href="{{ route('prescolaires.index') }}"> العودة الى الرئيسة </a>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    <a class="btn" style="background-color: orange;color:white" href="{{ route('prescolaires.index') }}"> العودة الى الرئيسة
+    </a>
 @endsection
 
-@section('title','معلومات الوحدة')
+@section('title', 'معلومات الوحدة')

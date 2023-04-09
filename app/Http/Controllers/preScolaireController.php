@@ -67,9 +67,9 @@ class preScolaireController extends Controller
     }
     public function search(Request $request)
     {
-        $nom = $request->input('nom');
-        $unit = DB::table('test_m_s')->where('nom', $nom)->get();
+        $unit = $request->input('unit');
+        $units = DB::table('test_m_s')->where('nom', $unit)->get();
 
-        return view('searchResults', ['unit' => $unit]);
+        return view('searchResults', ['units' => $units]);
     }
 }
