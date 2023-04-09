@@ -6,13 +6,13 @@ use App\Models\testM;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class cont extends Controller
+class preScolaireController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {   
         $units = testM::all();
         return view('home', ['units' => $units]);
     }
@@ -65,7 +65,6 @@ class cont extends Controller
     {
         //
     }
-
     public function search(Request $request)
     {
         $nom = $request->input('nom');

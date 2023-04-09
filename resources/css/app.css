@@ -28,7 +28,7 @@ body {
     background-color: orange;
     border: none;
     border-bottom-right-radius:55%;
-    box-shadow: -5px -1px 20px black;
+    box-shadow: -5px -1px 20px rgb(162, 116, 30);
 }
 #contact a{
     text-decoration: none;

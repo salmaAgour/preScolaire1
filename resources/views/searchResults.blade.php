@@ -2,7 +2,7 @@
 
 @section('content')
     <br />
-    <h1>showunit</h1>
+    <h1>search results</h1>
     <table class="table text-center table-hover">
         <thead class=" table-secondary">
             <tr>
@@ -35,7 +35,7 @@
             @endforelse
         </tbody>
     </table>
-    <a class="btn btn-danger" href="{{ route('index') }}">Retour à La Liste des unites</a>
+    <a class="btn btn-danger" href="{{ route('index') }}"> العودة الى الرئيسة </a>
 @endsection
 
 {{-- @section('title',{{ $u->nom }}.' نتائج البحث عن  ') --}}

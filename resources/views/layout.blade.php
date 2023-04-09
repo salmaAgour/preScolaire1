@@ -15,7 +15,7 @@
 
 <body dir="rtl">
     <div class="flex-shrink-0 p-3 text-white bg-primary " style="width: 280px;height:100%">
-        <a href="{{ route('index') }}" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <a href="{{ route('prescolaires.index') }}" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
             <svg class="bi me-2" width="30" height="24">
                 <use xlink:href="C:\Users\Salma\Downloads\image"></use>
             </svg>
