@@ -13,14 +13,12 @@
                     <option value="تزنيت"> تزنيت </option>
                     <option value="تارودانت">تارودانت</option>
                     <option value="جماعة">جماعة</option>
-                    @error('commune')
-                        <div class="alert alert-danger">{{ 'please choose' }}</div>
-                    @enderror
                 </select>
                 <br />
 
                 <label for="etab" class="col-2"> المؤسسة </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="etab" id="etab">
+                    <option selected disabled> -- </option>
                     <option value="الحسن 1"> الحسن الاول </option>
                     <option value="ابن سينا">ابن سينا</option>
                     <option value="مؤسسة">مؤسسة</option>
@@ -29,6 +27,7 @@
 
                 <label for="unit" class="col-2"> الوحدة </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="unit" id="unit">
+                    <option selected disabled> -- </option>
                     <option value="التفوق"> التفوق </option>
                     <option value="الامل">الامل</option>
                     <option value="وحدة">وحدة</option>
@@ -44,9 +43,9 @@
                 <br>
                 <button type="submit" class=" col-md-4 btn btn-primary"> بحث </button>
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div>
                             @foreach ($errors->all() as $error)
-                                <div>{{ $error }}</div>
+                                <div class="alert alert-danger mt-1">{{ $error }}</div>
                             @endforeach
                     </div>
                 @endif

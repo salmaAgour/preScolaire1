@@ -72,6 +72,8 @@ class preScolaireController extends Controller
     {
         $request->validate([
             'commune' => 'required',
+            'etab' => 'required',
+            'unit' => 'required',
         ]);
 
         $commune = $request->input('commune');
