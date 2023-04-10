@@ -6,12 +6,16 @@
         <form action="{{ url('/prescolaire') }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
-                        
+
                 <label for="commune" class="col-2"> الجماعة </label>
-                <select class="form-select form-select" aria-label=".form-select-sm" name="commune" id="commune">
+                <select required class="form-select form-select" aria-label=".form-select-sm" name="commune" id="commune">
+                    <option selected disabled> -- </option>
                     <option value="تزنيت"> تزنيت </option>
                     <option value="تارودانت">تارودانت</option>
                     <option value="جماعة">جماعة</option>
+                    @error('commune')
+                        <div class="alert alert-danger">{{ 'please choose' }}</div>
+                    @enderror
                 </select>
                 <br />
 
@@ -39,6 +43,13 @@
                 </select>
                 <br>
                 <button type="submit" class=" col-md-4 btn btn-primary"> بحث </button>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                    </div>
+                @endif
             </div>
         </form>
     @endsection

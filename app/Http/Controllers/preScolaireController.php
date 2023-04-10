@@ -67,6 +67,10 @@ class preScolaireController extends Controller
     }
     public function search(Request $request)
     {
+        $request->validate([
+            'commune' => 'required',
+        ]);
+
         $commune = $request->input('commune');
         $etab = $request->input('etab');
         $unit = $request->input('unit');
