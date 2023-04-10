@@ -9,23 +9,23 @@
                         
                 <label for="commune" class="col-2"> الجماعة </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="commune" id="commune">
-                    <option value="*"> -- </option>
-                    <option value="جماعة">جماعة</option>
+                    <option value="تزنيت"> تزنيت </option>
+                    <option value="تارودانت">تارودانت</option>
                     <option value="جماعة">جماعة</option>
                 </select>
                 <br />
 
                 <label for="etab" class="col-2"> المؤسسة </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="etab" id="etab">
-                    <option value="*">--</option>
-                    <option value="مؤسسة">مؤسسة</option>
+                    <option value="الحسن 1"> الحسن الاول </option>
+                    <option value="ابن سينا">ابن سينا</option>
                     <option value="مؤسسة">مؤسسة</option>
                 </select>
                 <br />
 
                 <label for="unit" class="col-2"> الوحدة </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="unit" id="unit">
-                    <option value="">--</option>
+                    <option value="التفوق"> التفوق </option>
                     <option value="الامل">الامل</option>
                     <option value="وحدة">وحدة</option>
                 </select>
@@ -33,8 +33,8 @@
 
                 <label for="anneeSco" class="col-2"> الموسم الدراسي </label>
                 <select class="form-select form-select" aria-label=".form-select-sm" name="anneeSco" id="anneeSco">
-                    <option value="">--</option>
-                    <option value="الموسم الدراسي">الموسم الدراسي</option>
+                    <option value="2022/2023"> 2022/2023 </option>
+                    <option value="2021/2023">2021/2022</option>
                     <option value="الموسم الدراسي">الموسم الدراسي</option>
                 </select>
                 <br>
