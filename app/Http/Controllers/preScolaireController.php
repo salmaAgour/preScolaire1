@@ -12,7 +12,7 @@ class preScolaireController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
+    {
         $units = testM::all();
         return view('home', ['units' => $units]);
     }
@@ -67,8 +67,15 @@ class preScolaireController extends Controller
     }
     public function search(Request $request)
     {
+        $commune = $request->input('commune');
+        $etab = $request->input('etab');
         $unit = $request->input('unit');
-        $units = DB::table('test_m_s')->where('nom', $unit)->get();
+        $anneeSco = $request->input('anneeSco');
+        $units = DB::table('test_m_s')->where('commune', $commune)
+            ->where('etab',$etab)
+            ->where('nom',$unit)
+            ->where('anneeSco',$anneeSco)
+            ->get();
 
         return view('searchResults', ['units' => $units]);
     }

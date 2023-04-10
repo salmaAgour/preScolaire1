@@ -2,7 +2,7 @@
 
 @section('content')
     <br />
-    <h1>search results</h1>
+    <h1> نتائج البحث </h1>
     <table class="table text-center table-hover">
         <thead class=" table-secondary">
             <tr>
@@ -38,3 +38,4 @@
     </table>
     <a class="btn" style="background-color:orange;color:white" href="{{ route('prescolaires.index') }}"> العودة الى الرئيسة </a>
 @endsection
+@section('title',' نتائج البحث ')
