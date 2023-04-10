@@ -11,19 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('test_m_s', function (Blueprint $table) {
+        Schema::create('catreId', function (Blueprint $table) {
             $table->id();
-            $table->string('commune');
-            $table->string('nom');
-            $table->string('type');
-            $table->string('etab');
+            $table->string('nomR');
+            $table->string('CIN');
+            $table->string('nomU');
+            $table->string('typeU');
             $table->string('assoc');
-            $table->integer('nbClasses');
-            $table->integer('nbEnfants');
-            $table->integer('nbMaitresses');
+            $table->integer('nbrC');
             $table->string('anneeSco');
             $table->timestamps();
-        });
+        });        
     }
 
     /**
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('test_m_s');
+        //
     }
 };

@@ -38,7 +38,7 @@
                 <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-bold pb-1 small">
                         <li><a href="{{ url('prescolaire/search') }}" class="link-info rounded text-decoration-none"> البحث عن وحدة </a></li>
-                        <li><a href="#" class="link-info rounded text-decoration-none">test2</a></li>
+                        <li><a href="{{route('prescolaires.create')}}" class="link-info rounded text-decoration-none">بطاقة فردية</a></li>
                         <li><a href="#" class="link-info rounded text-decoration-none">test3</a></li>
                     </ul>
                 </div>

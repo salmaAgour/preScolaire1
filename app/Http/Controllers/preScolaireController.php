@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\testM;
+use App\Models\test_m_s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +13,7 @@ class preScolaireController extends Controller
      */
     public function index()
     {
-        $units = testM::all();
+        $units = test_m_s::all();
         return view('home', ['units' => $units]);
     }
 
@@ -22,7 +22,7 @@ class preScolaireController extends Controller
      */
     public function create()
     {
-        //
+        return view('createF');
     }
 
     /**
@@ -30,7 +30,10 @@ class preScolaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::insert('insert into test_m_s (commune,nom,type,assoc,etab,nbClasses,anneeSco) values (?, ?,?,?,?,?,?)', 
+        [$request->input('commune'),$request->input('nomU'),$request->input('typeU'),$request->input('assoc')
+        ,$request->input('etab'),$request->input('nbrC'),$request->input('anneeSc')]);
+        return redirect()->route('prescolaires.index');
     }
 
     /**
@@ -38,7 +41,7 @@ class preScolaireController extends Controller
      */
     public function show(string $id)
     {
-        $unit = testM::findorfail($id);
+        $unit = test_m_s::findorfail($id);
         return view('show', ['unit' => $unit]);
     }
 
