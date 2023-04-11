@@ -3,6 +3,7 @@
 @section('content')
     <br />
     <h1> نتائج البحث </h1>
+    <br/>
     <table class="table text-center table-hover">
         <thead class=" table-secondary">
             <tr>
