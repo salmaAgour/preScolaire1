@@ -3,6 +3,7 @@
 use App\Http\Controllers\filterController;
 use App\Http\Controllers\cont;
 use App\Http\Controllers\preScolaireController;
+use App\Http\Controllers\carteId;
 use Illuminate\Support\Facades\Route;
 
 /*

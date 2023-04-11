@@ -33,6 +33,10 @@ class preScolaireController extends Controller
         DB::insert('insert into test_m_s (commune,nom,type,assoc,etab,nbClasses,anneeSco) values (?, ?,?,?,?,?,?)', 
         [$request->input('commune'),$request->input('nomU'),$request->input('typeU'),$request->input('assoc')
         ,$request->input('etab'),$request->input('nbrC'),$request->input('anneeSc')]);
+
+        DB::insert('insert into catreId (nomR,CIN,nomU,typeU,assoc,nbrC,anneeSco) values (?,?,?,?,?,?,?)', 
+        [$request->input('nomR'),$request->input('CIN'),$request->input('nomU'),$request->input('typeU')
+        ,$request->input('assoc'),$request->input('nbrC'),$request->input('anneeSc')]);
         return redirect()->route('prescolaires.index');
     }
 
@@ -50,7 +54,8 @@ class preScolaireController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $unit = test_m_s::findorfail($id);
+        return view('editF', ['item' => $unit]);
     }
 
     /**
