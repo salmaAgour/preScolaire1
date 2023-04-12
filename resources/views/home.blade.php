@@ -33,7 +33,7 @@
                     <td>{{ $u['assoc'] }}</td>
                     <td>{{ $u['anneeSco'] }}</td>
                     <td><a  href="{{route('prescolaires.show',$u->id)}}" class="btn btn-primary"> عرض </a>
-                    <a  href="{{route('prescolaires.show',$u->id)}}" class="btn btn-primary"> تغيير  </a></td>
+                    <a  href="{{route('prescolaires.edit',$u->id)}}" class="btn btn-primary"> تغيير  </a></td>
                 </tr>
             @empty
                 <p>no data found</p>
