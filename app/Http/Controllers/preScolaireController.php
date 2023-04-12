@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\test_m_s;
+use App\Models\carteId;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,13 +31,42 @@ class preScolaireController extends Controller
      */
     public function store(Request $request)
     {
-        DB::insert('insert into test_m_s (commune,nom,type,assoc,etab,nbClasses,anneeSco) values (?, ?,?,?,?,?,?)', 
-        [$request->input('commune'),$request->input('nomU'),$request->input('typeU'),$request->input('assoc')
-        ,$request->input('etab'),$request->input('nbrC'),$request->input('anneeSc')]);
 
-        DB::insert('insert into catreId (nomR,CIN,nomU,typeU,assoc,nbrC,anneeSco) values (?,?,?,?,?,?,?)', 
-        [$request->input('nomR'),$request->input('CIN'),$request->input('nomU'),$request->input('typeU')
-        ,$request->input('assoc'),$request->input('nbrC'),$request->input('anneeSc')]);
+        $unit=new test_m_s();
+        $unit->commune=$request->input('commune');
+        $unit->nom=$request->input('nomU');
+        $unit->type=$request->input('typeU');
+        $unit->assoc=$request->input('assoc');
+        $unit->etab=$request->input('etab');
+        $unit->nbClasses=$request->input('nbrC');
+        $unit->anneeSco=$request->input('anneeSc');
+        $unit->save();
+
+        sleep(5);
+
+        if ($unit->save()) {
+        $carte=new carteId();
+        $carte->idU=$unit->id;
+        $carte->nomR=$request->input('nomR');
+        $carte->CIN=$request->input('CIN');
+        $carte->nomU=$request->input('nomU');
+        $carte->typeU=$request->input('typeU');
+        $carte->assoc=$request->input('assoc');
+        $carte->nbrC=$request->input('nbrC');
+        $carte->anneeSco=$request->input('anneeSc');
+        $carte->save();
+    }
+
+        // $unit=DB::insert('insert into test_m_s (commune,nom,type,assoc,etab,nbClasses,anneeSco) values (?,?,?,?,?,?,?)', 
+        // [$request->input('commune'),$request->input('nomU'),$request->input('typeU'),$request->input('assoc')
+        // ,$request->input('etab'),$request->input('nbrC'),$request->input('anneeSc')]);
+
+        // sleep(5);
+        
+        // $carte=DB::insert('insert into carte_ids (nomR,CIN,nomU,typeU,assoc,nbrC,anneeSco) values (?,?,?,?,?,?,?)', 
+        // [$request->input('nomR'),$request->input('CIN'),$request->input('nomU'),$request->input('typeU')
+        // ,$request->input('assoc'),$request->input('nbrC'),$request->input('anneeSc')]);
+
         return redirect()->route('prescolaires.index');
     }
 
@@ -52,10 +82,11 @@ class preScolaireController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id )
     {
-        $unit = test_m_s::findorfail($id);
-        return view('editF', ['item' => $unit]);
+        $id=DB::table('carte_ids')->join('test_m_s','test_m_s.id' , '=' , 'carte_ids.idU')
+                                  ->first(); 
+        return view('editF', ['item' => $id]);
     }
 
     /**
@@ -63,7 +94,28 @@ class preScolaireController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $unit =test_m_s::findOrFail($id);
+        $unit->commune=$request->input('commune');
+        $unit->nom=$request->input('nomU');
+        $unit->type=$request->input('typeU');
+        $unit->assoc=$request->input('assoc');
+        $unit->etab=$request->input('etab');
+        $unit->nbClasses=$request->input('nbrC');
+        $unit->anneeSco=$request->input('anneeSc');
+        $unit->save();
+        sleep(5);
+        if ($unit->save()) {
+            $carte=carteId::findorFail($id);
+            $carte->nomR=$request->input('nomR');
+            $carte->CIN=$request->input('CIN');
+            $carte->nomU=$request->input('nomU');
+            $carte->typeU=$request->input('typeU');
+            $carte->assoc=$request->input('assoc');
+            $carte->nbrC=$request->input('nbrC');
+            $carte->anneeSco=$request->input('anneeSc');
+            $carte->save();}
+
+        return redirect()->route('prescolaires.index');
     }
 
     /**

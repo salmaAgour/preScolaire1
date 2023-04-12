@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catreId', function (Blueprint $table) {
+        Schema::create('carte_ids', function (Blueprint $table) {
             $table->id();
             $table->string('nomR');
             $table->string('CIN');
@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('assoc');
             $table->integer('nbrC');
             $table->string('anneeSco');
+            $table->int('idU');
             $table->timestamps();
-        });        
+        });
     }
 
     /**
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('carte_ids');
     }
 };
